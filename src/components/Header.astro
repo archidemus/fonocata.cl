@@ -69,8 +69,15 @@
     </div>
 
     <!-- Mobile Menu Toggle -->
-    <button class="text-slate-600 md:hidden" aria-label="Abrir menú">
+    <button
+      id="mobile-menu-toggle"
+      class="text-slate-600 md:hidden"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
       <svg
+        id="menu-icon-open"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
@@ -80,12 +87,119 @@
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
+        class="block"
         ><line x1="3" y1="12" x2="21" y2="12"></line><line
           x1="3"
           y1="6"
           x2="21"
           y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg
       >
+      <svg
+        id="menu-icon-close"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="hidden"
+        ><line x1="18" y1="6" x2="6" y2="18"></line><line
+          x1="6"
+          y1="6"
+          x2="18"
+          y2="18"></line></svg
+      >
     </button>
   </div>
+
+  <!-- Mobile Menu (Hidden by default) -->
+  <div
+    id="mobile-menu"
+    class="absolute hidden w-full origin-top transform border-b border-slate-100 bg-white/95 px-4 pb-4 shadow-lg backdrop-blur-md transition-all duration-300 md:hidden"
+  >
+    <nav class="flex flex-col gap-4 pt-4 pb-2">
+      <a
+        href="#servicios"
+        class="mobile-link block rounded-lg px-4 py-2 font-medium text-slate-700 transition-colors hover:bg-purple-50 hover:text-purple-600"
+        >Tratamientos</a
+      >
+      <a
+        href="#sobre-mi"
+        class="mobile-link block rounded-lg px-4 py-2 font-medium text-slate-700 transition-colors hover:bg-purple-50 hover:text-purple-600"
+        >Sobre Mí</a
+      >
+      <a
+        href="#contacto"
+        class="mobile-link block rounded-lg px-4 py-2 font-medium text-slate-700 transition-colors hover:bg-purple-50 hover:text-purple-600"
+        >Contacto</a
+      >
+      <div class="mt-2 px-4">
+        <a
+          href="https://wa.me/56956320835"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex w-full items-center justify-center gap-2 rounded-full bg-pink-200 px-6 py-3 text-sm font-bold text-pink-900 shadow-sm transition-all hover:bg-pink-300 focus:ring-4 focus:ring-pink-100"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path><path
+              d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
+            ></path></svg
+          >
+          Agendar Consulta
+        </a>
+      </div>
+    </nav>
+  </div>
 </header>
+
+<script>
+  // Mobile menu toggle logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle')!;
+    const mobileMenu = document.getElementById('mobile-menu')!;
+    const menuIconOpen = document.getElementById('menu-icon-open')!;
+    const menuIconClose = document.getElementById('menu-icon-close')!;
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (mobileMenuToggle && mobileMenu && menuIconOpen && menuIconClose) {
+      function toggleMenu() {
+        const isExpanded =
+          mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+
+        mobileMenuToggle.setAttribute(
+          'aria-expanded',
+          (!isExpanded).toString(),
+        );
+        mobileMenu.classList.toggle('hidden');
+        menuIconOpen.classList.toggle('hidden');
+        menuIconOpen.classList.toggle('block');
+        menuIconClose.classList.toggle('hidden');
+        menuIconClose.classList.toggle('block');
+      }
+
+      mobileMenuToggle.addEventListener('click', toggleMenu);
+
+      // Close menu when clicking a link
+      mobileLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          if (mobileMenuToggle.getAttribute('aria-expanded') === 'true') {
+            toggleMenu();
+          }
+        });
+      });
+    }
+  });
+</script>
