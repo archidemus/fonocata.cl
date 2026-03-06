@@ -12,13 +12,10 @@
     "backup": "node scripts/backup.js"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.0",
     "@tailwindcss/vite": "^4.1.7",
     "archiver": "^6.0.1",
     "astro": "^5.7.13",
-    "astro-i18n-aut": "^0.7.3",
     "basic-ftp": "^5.2.0",
-    "swiper": "^11.2.6",
     "tailwindcss": "^4.1.7"
   },
   "devDependencies": {

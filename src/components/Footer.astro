@@ -1,12 +1,80 @@
 ---
-import { t } from '../utils/i18n';
-import { getPreferredLocale } from '../utils/i18n';
-
-const locale = getPreferredLocale(Astro.url);
 ---
-
-<footer class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800">
-    <div class="container mx-auto px-4 text-center">
-        <p class="text-sm font-light tracking-wide">&copy; {new Date().getFullYear()} CPS Ingeniería. {t('all_rights_reserved', locale)}</p>
+<footer class="bg-slate-900 border-t border-slate-800 py-16 text-slate-400">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+      <div class="flex items-center">
+        <a href="/" class="text-xl font-heading font-extrabold text-white tracking-tight flex items-center gap-2">
+            Catalina Orellana M. 
+            <span class="text-slate-500 font-medium text-sm inline-block border-l border-slate-700 pl-2">Fonoaudióloga</span>
+        </a>
+      </div>
+      
+      <!-- Redes -->
+      <div class="flex gap-4">
+        <a href="https://instagram.com/fonocata.cl" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-purple-500 hover:text-white transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://linkedin.com/in/tu_usuario" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+      </div>
     </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 border-t border-slate-800 pt-12">
+      <!-- Contacto -->
+      <div id="contacto">
+        <h4 class="text-white font-heading font-bold mb-4 text-lg">Contacto</h4>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-500"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:correo@ejemplo.com" class="hover:text-purple-300 transition-colors">correo@ejemplo.com</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-500"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="https://wa.me/56900000000" class="hover:text-purple-300 transition-colors">+56 9 0000 0000</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-500"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Providencia / Ñuñoa (o modalidad Online)</span>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Enlaces -->
+      <div>
+        <h4 class="text-white font-heading font-bold mb-4 text-lg">Enlaces Rápidos</h4>
+        <ul class="space-y-3 flex flex-col items-start">
+          <li><a href="#hero" class="hover:text-purple-300 transition-colors relative group">
+            Inicio
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 group-hover:w-full transition-all"></span>
+          </a></li>
+          <li><a href="#servicios" class="hover:text-purple-300 transition-colors relative group">
+            Áreas de Atención
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 group-hover:w-full transition-all"></span>
+          </a></li>
+          <li><a href="#sobre-mi" class="hover:text-purple-300 transition-colors relative group">
+            Sobre Mí
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 group-hover:w-full transition-all"></span>
+          </a></li>
+        </ul>
+      </div>
+      
+      <!-- Legal / CTA extra -->
+      <div>
+        <h4 class="text-white font-heading font-bold mb-4 text-lg">Agenda tu evaluación</h4>
+        <p class="mb-6 text-slate-500 text-sm leading-relaxed">Si necesitas atención fonoaudiológica, ya sea de forma preventiva o en situaciones complejas, contáctame y te orientaré.</p>
+        <a href="https://wa.me/56900000000" target="_blank" rel="noopener noreferrer" class="bg-purple-500/20 text-purple-300 hover:bg-purple-500 hover:text-white border border-purple-500/50 py-2 px-6 rounded-full inline-flex items-center gap-2 transition-all text-sm font-medium">
+          Conversar por WhatsApp
+        </a>
+      </div>
+    </div>
+    
+    <div class="text-center text-sm text-slate-500 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p>&copy; {new Date().getFullYear()} Catalina Orellana M. Todos los derechos reservados.</p>
+      <p>Diseñado con empatía.</p>
+    </div>
+    
+  </div>
 </footer>

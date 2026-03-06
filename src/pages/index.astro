@@ -1,95 +1,35 @@
 ---
-import Navbar from '../components/Navbar.astro';
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
 import About from '../components/About.astro';
-import Contact from '../components/Contact.astro';
+import InstagramFeed from '../components/InstagramFeed.astro';
 import Footer from '../components/Footer.astro';
-import '../styles/swiper.css';
-import '../styles/global.css';
-import '../styles/fonts.css';
 ---
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Basic SEO -->
-    <title>CPS Ingeniería | Soluciones Eléctricas Integrales y Automatización en Chile</title>
-    <meta name="description" content="CPS Ingeniería - Expertos en soluciones eléctricas industriales, sistemas de ventilación, desarrollo de tableros y automatización. Más de 25 años de excelencia en el sector eléctrico en Chile.">
-    <meta name="keywords" content="Ingeniería eléctrica, soluciones eléctricas industriales, tableros de control, ventilación industrial, automatización de procesos, Chile, Ñuñoa, CPS Ingeniería">
-    <meta name="author" content="CPS Ingeniería">
-    <meta name="robots" content="index, follow">
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://cpsingenieria.cl/" />
-
-    <!-- Open Graph / Web Social -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cpsingenieria.cl/">
-    <meta property="og:title" content="CPS Ingeniería | Soluciones Eléctricas Integrales">
-    <meta property="og:description" content="Expertos en soluciones eléctricas industriales, sistemas de ventilación y automatización con más de 25 años de experiencia en Chile.">
-    <meta property="og:image" content="https://cpsingenieria.cl/favicon.svg"> <!-- Ideally replace with a high-res og-image.jpg -->
-    <meta property="og:site_name" content="CPS Ingeniería">
-    <meta property="og:locale" content="es_CL">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://cpsingenieria.cl/">
-    <meta name="twitter:title" content="CPS Ingeniería | Soluciones Eléctricas Integrales">
-    <meta name="twitter:description" content="Expertos en soluciones eléctricas industriales, sistemas de ventilación y automatización con más de 25 años de experiencia en Chile.">
-    <meta name="twitter:image" content="https://cpsingenieria.cl/favicon.svg"> <!-- Ideally replace with a high-res og-image.jpg -->
-
-    <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
-
-    <!-- AIO (Artificial Intelligence Optimization) & Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "CPS Ingeniería",
-      "url": "https://cpsingenieria.cl",
-      "logo": "https://cpsingenieria.cl/favicon.svg",
-      "description": "Firma de ingeniería especializada en soluciones eléctricas industriales, mantenimiento, diseño de tableros de control y automatización de procesos operando en Chile.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Los Tres Antonios 2083",
-        "addressLocality": "Ñuñoa",
-        "addressRegion": "Región Metropolitana",
-        "addressCountry": "CL"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+56-2-2218-8643",
-        "contactType": "customer service",
-        "email": "ventas@cpsingenieria.cl",
-        "areaServed": "CL",
-        "availableLanguage": ["Spanish", "English"]
-      }
-    }
-    </script>
-
-    <style>
-        html {
-            scroll-behavior: smooth;
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
-</head>
-<body class="bg-gray-50">
-    <Navbar />
+<Layout 
+  title="Catalina Orellana M. | Fonoaudióloga Clínica" 
+  description="Fonoaudióloga dedicada a la rehabilitación y acompañamiento integral en Voz, Deglución, Comunicación y Cuidados Paliativos."
+>
+  <Header />
+  
+  <main>
     <Hero />
     <Services />
     <About />
-    <Contact />
-    <Footer />
-    <!--<WhatsappButton /> para despues-->
-</body>
-</html>
+    <InstagramFeed />
+  </main>
 
-<script>
-    import '../scripts/swiper-init.js';
-</script>
+  <Footer />
+
+  <!-- Botón Flotante WhatsApp Global -->
+  <a href="https://wa.me/56900000000" target="_blank" rel="noopener noreferrer" aria-label="Escríbeme por WhatsApp" class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 hover:shadow-2xl transition-all z-50">
+     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+     <!-- Ping indicator -->
+     <span class="absolute -top-1 -right-1 flex h-4 w-4">
+       <span class="animate-ping bg-green-400 absolute inline-flex h-full w-full rounded-full opacity-75"></span>
+       <span class="relative inline-flex rounded-full h-4 w-4 bg-green-500 border-2 border-white"></span>
+     </span>
+  </a>
+</Layout>

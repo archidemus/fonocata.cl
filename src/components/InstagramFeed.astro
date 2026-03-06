@@ -1,0 +1,87 @@
+---
+// src/components/InstagramFeed.astro
+
+// Actualizado con la URL real de fonocata.cl
+const BEHOLD_API_URL = "https://feeds.behold.so/y8ZzL88DSZ0CiTE3F0K3";
+
+let posts = [];
+let error = false;
+
+try {
+  const response = await fetch(BEHOLD_API_URL);
+  if (response.ok) {
+    const data = await response.json();
+    // Behold entrega un objeto. Los posts están en data.posts
+    posts = data.posts ? data.posts.slice(0, 8) : []; 
+  }
+} catch (e) {
+  console.error("Error cargando Instagram:", e);
+  error = true;
+}
+---
+
+<section id="instagram-feed" class="py-24 bg-white relative">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    
+    <div class="inline-flex items-center justify-center gap-2 mb-4 bg-pink-50 text-pink-500 px-4 py-2 rounded-full font-medium text-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      #FonoEducación
+    </div>
+    
+    <h2 class="text-3xl md:text-4xl font-extrabold font-heading text-slate-800 mb-6">
+      Últimos consejos en <a href="https://instagram.com/fonocata.cl" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-500 transition-colors">@fonocata.cl</a>
+    </h2>
+    
+    <p class="text-lg text-slate-600 mb-12 max-w-2xl mx-auto">
+      Descubre información clara y empática sobre estimulación cognitiva, mitos en fonoaudiología y recursos de acompañamiento.
+    </p>
+
+    <!-- Grid Dinámico de Instagram -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6" id="instagram-feed-container">
+      {posts.length > 0 ? (
+        posts.map((post: any) => (
+          <a 
+            href={post.permalink} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="group relative aspect-square overflow-hidden rounded-2xl bg-slate-100 shadow-sm transition-all hover:-translate-y-2 hover:shadow-xl"
+          >
+            <img 
+              src={post.mediaType === 'VIDEO' ? post.thumbnailUrl : post.mediaUrl} 
+              alt={post.caption || "Post de Instagram de Catalina"} 
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
+            />
+            {post.mediaType === 'VIDEO' && (
+              <div class="absolute top-2 right-2 bg-black/30 backdrop-blur-md p-1.5 rounded-lg text-white group-hover:bg-purple-500/50 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m7 4 12 8-12 8V4z"/></svg>
+              </div>
+            )}
+            <div class="absolute inset-0 bg-gradient-to-t from-purple-900/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100 flex items-end p-4">
+               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </div>
+          </a>
+        ))
+      ) : (
+        /* Estado mientras no hay API Key o hay error */
+        <div class="col-span-full py-20 rounded-3xl bg-slate-50 border-2 border-dashed border-slate-200 flex flex-col items-center">
+            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4 text-purple-400">
+               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </div>
+            <h3 class="text-xl font-heading font-bold text-slate-700 mb-2">Feed de Instagram</h3>
+            <p class="text-slate-500 max-w-sm mx-auto text-sm">
+                Conectando con Instagram...
+            </p>
+        </div>
+      )}
+    </div>
+
+    <div class="mt-16">
+        <a href="https://instagram.com/fonocata.cl" target="_blank" class="bg-slate-900 text-white hover:bg-slate-800 px-8 py-3 rounded-full font-bold transition-all inline-flex items-center gap-2">
+            Seguir en Instagram
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+    </div>
+    
+  </div>
+</section>

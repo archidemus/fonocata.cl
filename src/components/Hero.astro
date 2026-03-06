@@ -1,70 +1,36 @@
 ---
-import video1 from '../assets/v1.mp4';
-import video2 from '../assets/v2.mp4';
-import video3 from '../assets/v3.mp4';
-import { t } from '../utils/i18n';
-import { getPreferredLocale } from '../utils/i18n';
-
-const locale = getPreferredLocale(Astro.url);
-const base = import.meta.env.BASE_URL || '';
-const normalizedBase = base === '/' ? '' : base;
-const baseUrl = locale === 'en' ? `${normalizedBase}/en` : normalizedBase;
 ---
-<header id="inicio" class="relative bg-gray-900 text-white pt-32 pb-20 lg:min-h-[85vh] flex items-center overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-red-950 opacity-95 z-0"></div>
-    <!-- Decorative glowing orb -->
-    <div class="absolute top-1/4 -left-64 w-96 h-96 bg-red-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 z-0 animate-pulse"></div>
-    <div class="absolute bottom-1/4 -right-64 w-96 h-96 bg-red-800 rounded-full mix-blend-multiply filter blur-[128px] opacity-30 z-0"></div>
+<section class="relative pt-24 pb-32 md:pt-36 md:pb-40 bg-slate-50 overflow-hidden" id="hero">
+  <!-- Soft Background Gradient Elements -->
+  <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 pointer-events-none" aria-hidden="true">
+    <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-purple-200 to-blue-200 opacity-40 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"></div>
+  </div>
+  
+  <div class="absolute top-1/2 right-0 -z-10 transform-gpu overflow-hidden blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none">
+    <div class="aspect-[500/500] w-[30rem] rounded-full bg-gradient-to-b from-pink-100 to-transparent opacity-60"></div>
+  </div>
 
-    <div class="container mx-auto px-4 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div class="space-y-6">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-300 text-sm font-medium backdrop-blur-md">
-                    <span class="w-2 h-2 rounded-full bg-red-500 animate-[pulse_2s_ease-in-out_infinite]"></span>
-                    {t('engineering_excellence', locale)}
-                </div>
-                <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                    {t('welcome', locale)}
-                </h1>
-                <p class="text-lg text-gray-400 font-light leading-relaxed max-w-xl">
-                    {t('about_us', locale)}
-                </p>
-                <div class="pt-6 flex flex-wrap gap-4">
-                    <a href={`${baseUrl}/#servicios`} data-section="servicios" class="px-8 py-3.5 bg-red-700 hover:bg-red-600 text-white rounded-xl font-medium transition-all duration-300 shadow-[0_0_20px_rgba(185,28,28,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)] hover:-translate-y-1">
-                        {t('discover_services', locale)}
-                    </a>
-                    <a href={`${baseUrl}/#contacto`} data-section="contacto" class="px-8 py-3.5 bg-white/5 hover:bg-white/10 text-white rounded-xl font-medium transition-all duration-300 border border-white/10 hover:border-white/20 backdrop-blur-sm">
-                        {t('contact_us', locale)}
-                    </a>
-                </div>
-            </div>
-            
-            <div class="relative group">
-                <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-                <div class="swiper-container rounded-2xl overflow-hidden bg-gray-900 border border-white/10 relative shadow-2xl aspect-video">
-                    <div class="swiper-wrapper h-full w-full">
-                        <div class="swiper-slide h-full w-full">
-                            <video class="w-full h-full object-cover" autoplay muted playsinline loop>
-                                <source src={video1} type="video/mp4" />
-                            </video>
-                        </div>
-                        <div class="swiper-slide h-full w-full">
-                            <video class="w-full h-full object-cover" autoplay muted playsinline loop>
-                                <source src={video2} type="video/mp4" />
-                            </video>
-                        </div>
-                        <div class="swiper-slide h-full w-full">
-                            <video class="w-full h-full object-cover" autoplay muted playsinline loop>
-                                <source src={video3} type="video/mp4" />
-                            </video>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+    <!-- Main Headline -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold font-heading text-slate-800 leading-tight mb-8">
+      Rehabilitación y Acompañamiento <br class="hidden sm:block" />
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-300">Fonoaudiológico Integral</span>
+    </h1>
+    
+    <!-- Subtitle -->
+    <p class="text-lg sm:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+      Evaluación y tratamiento en Voz, Deglución, Comunicación y Cuidados Paliativos con un enfoque profundamente humano y empático.
+    </p>
+    
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
+      <a href="#servicios" class="bg-white text-slate-700 hover:text-purple-500 font-bold py-3.5 px-8 rounded-full shadow-sm hover:shadow-md transition-all focus:ring-4 focus:ring-slate-100 border border-slate-100">
+        Conoce mis servicios
+      </a>
+      <a href="https://wa.me/56900000000" target="_blank" rel="noopener noreferrer" class="bg-purple-300 text-purple-900 hover:bg-purple-400 font-bold py-3.5 px-8 rounded-full shadow-sm hover:shadow-md transition-all focus:ring-4 focus:ring-purple-100 flex items-center justify-center gap-2">
+        Agenda tu hora
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      </a>
     </div>
-</header>
-
-<style>
-/* Any required generic overrides or fixes can go here */
-</style>
+  </div>
+</section>
