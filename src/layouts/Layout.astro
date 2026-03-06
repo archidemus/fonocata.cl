@@ -7,46 +7,52 @@ export interface Props {
 
 import '../styles/global.css';
 
-const { 
-  title, 
-  description = "Catalina Orellana M. | Fonoaudióloga. Rehabilitación y Acompañamiento Fonoaudiológico Integral en Voz, Deglución, Comunicación y Cuidados Paliativos.",
-  image = "/favicon.png"
+const {
+  title,
+  description = 'Catalina Orellana M. | Fonoaudióloga. Rehabilitación y Acompañamiento Fonoaudiológico Integral en Voz, Deglución, Comunicación y Cuidados Paliativos.',
+  image = '/favicon.png',
 } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="busco fonoaudiólogo, fonoaudióloga santiago, tratamiento fonoaudiológico, rehabilitación de voz, terapia de lenguaje adultos, fonoaudiología a domicilio, clínica fonoaudiológica, deglución disfagia tratamiento, fonoaudiologa catalina orellana" />
+    <meta
+      name="keywords"
+      content="busco fonoaudiólogo, fonoaudióloga santiago, tratamiento fonoaudiológico, rehabilitación de voz, terapia de lenguaje adultos, fonoaudiología a domicilio, clínica fonoaudiológica, deglución disfagia tratamiento, fonoaudiologa catalina orellana"
+    />
     <meta name="author" content="Catalina Orellana M." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={Astro.url} />
-    
+
     <!-- Open Graph / Web Social -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content={Astro.url}>
-    <meta property="og:title" content={title}>
-    <meta property="og:description" content={description}>
-    <meta property="og:image" content={new URL(image, Astro.url)}>
-    <meta property="og:locale" content="es_CL">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:locale" content="es_CL" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content={Astro.url}>
-    <meta name="twitter:title" content={title}>
-    <meta name="twitter:description" content={description}>
-    <meta name="twitter:image" content={new URL(image, Astro.url)}>
-    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={Astro.url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.url)} />
+
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Structured Data (JSON-LD) - AIO & SEO -->
     <script type="application/ld+json" is:inline>
@@ -68,34 +74,37 @@ const {
           "addressCountry": "CL"
         },
         "description": "Fonoaudióloga dedicada a la rehabilitación y acompañamiento integral en Voz, Deglución, Comunicación y Cuidados Paliativos.",
-        "sameAs": [
-          "https://www.instagram.com/fonocata.cl"
-        ]
+        "sameAs": ["https://www.instagram.com/fonocata.cl"]
       }
     </script>
-    
+
     <style is:global>
+      :root {
+        --font-nunito: 'Nunito', sans-serif;
+        --font-inter: 'Inter', sans-serif;
+      }
 
-        :root {
-            --font-nunito: 'Nunito', sans-serif;
-            --font-inter: 'Inter', sans-serif;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        body {
-            font-family: var(--font-inter);
-            color: #334155;
-        }
+      body {
+        font-family: var(--font-inter);
+        color: #334155;
+      }
 
-        h1, h2, h3, h4, h5, h6, .font-heading {
-            font-family: var(--font-nunito);
-        }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .font-heading {
+        font-family: var(--font-nunito);
+      }
     </style>
-</head>
-<body class="bg-slate-50 flex flex-col min-h-screen text-slate-700">
+  </head>
+  <body class="flex min-h-screen flex-col bg-slate-50 text-slate-700">
     <slot />
-</body>
+  </body>
 </html>
