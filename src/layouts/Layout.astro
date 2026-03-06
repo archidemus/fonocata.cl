@@ -10,7 +10,7 @@ import '../styles/global.css';
 const { 
   title, 
   description = "Catalina Orellana M. | Fonoaudióloga. Rehabilitación y Acompañamiento Fonoaudiológico Integral en Voz, Deglución, Comunicación y Cuidados Paliativos.",
-  image = "/favicon.svg"
+  image = "/favicon.png"
 } = Astro.props;
 ---
 
@@ -37,7 +37,8 @@ const {
     <meta name="twitter:description" content={description}>
     <meta name="twitter:image" content={new URL(image, Astro.url)}>
     
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
