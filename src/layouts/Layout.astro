@@ -21,6 +21,10 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content="busco fonoaudiólogo, fonoaudióloga santiago, tratamiento fonoaudiológico, rehabilitación de voz, terapia de lenguaje adultos, fonoaudiología a domicilio, clínica fonoaudiológica, deglución disfagia tratamiento, fonoaudiologa catalina orellana" />
+    <meta name="author" content="Catalina Orellana M." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={Astro.url} />
     
     <!-- Open Graph / Web Social -->
     <meta property="og:type" content="website">
@@ -43,8 +47,35 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Structured Data (JSON-LD) - AIO & SEO -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "name": "Catalina Orellana M. | Fonoaudióloga Clínica",
+        "alternateName": "FonoCata",
+        "image": "https://fonocata.cl/favicon.png",
+        "@id": "https://fonocata.cl",
+        "url": "https://fonocata.cl",
+        "telephone": "+56956320835",
+        "email": "catalina.orellanamol@gmail.com",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Santiago",
+          "addressRegion": "Metropolitana",
+          "addressCountry": "CL"
+        },
+        "description": "Fonoaudióloga dedicada a la rehabilitación y acompañamiento integral en Voz, Deglución, Comunicación y Cuidados Paliativos.",
+        "sameAs": [
+          "https://www.instagram.com/fonocata.cl"
+        ]
+      }
+    </script>
     
     <style is:global>
+
         :root {
             --font-nunito: 'Nunito', sans-serif;
             --font-inter: 'Inter', sans-serif;
