@@ -1,0 +1,95 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/swiper.css';
+import '../styles/global.css';
+import '../styles/fonts.css';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Basic SEO -->
+    <title>CPS Ingeniería | Soluciones Eléctricas Integrales y Automatización en Chile</title>
+    <meta name="description" content="CPS Ingeniería - Expertos en soluciones eléctricas industriales, sistemas de ventilación, desarrollo de tableros y automatización. Más de 25 años de excelencia en el sector eléctrico en Chile.">
+    <meta name="keywords" content="Ingeniería eléctrica, soluciones eléctricas industriales, tableros de control, ventilación industrial, automatización de procesos, Chile, Ñuñoa, CPS Ingeniería">
+    <meta name="author" content="CPS Ingeniería">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://cpsingenieria.cl/" />
+
+    <!-- Open Graph / Web Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cpsingenieria.cl/">
+    <meta property="og:title" content="CPS Ingeniería | Soluciones Eléctricas Integrales">
+    <meta property="og:description" content="Expertos en soluciones eléctricas industriales, sistemas de ventilación y automatización con más de 25 años de experiencia en Chile.">
+    <meta property="og:image" content="https://cpsingenieria.cl/favicon.svg"> <!-- Ideally replace with a high-res og-image.jpg -->
+    <meta property="og:site_name" content="CPS Ingeniería">
+    <meta property="og:locale" content="es_CL">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cpsingenieria.cl/">
+    <meta name="twitter:title" content="CPS Ingeniería | Soluciones Eléctricas Integrales">
+    <meta name="twitter:description" content="Expertos en soluciones eléctricas industriales, sistemas de ventilación y automatización con más de 25 años de experiencia en Chile.">
+    <meta name="twitter:image" content="https://cpsingenieria.cl/favicon.svg"> <!-- Ideally replace with a high-res og-image.jpg -->
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- AIO (Artificial Intelligence Optimization) & Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CPS Ingeniería",
+      "url": "https://cpsingenieria.cl",
+      "logo": "https://cpsingenieria.cl/favicon.svg",
+      "description": "Firma de ingeniería especializada en soluciones eléctricas industriales, mantenimiento, diseño de tableros de control y automatización de procesos operando en Chile.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Los Tres Antonios 2083",
+        "addressLocality": "Ñuñoa",
+        "addressRegion": "Región Metropolitana",
+        "addressCountry": "CL"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+56-2-2218-8643",
+        "contactType": "customer service",
+        "email": "ventas@cpsingenieria.cl",
+        "areaServed": "CL",
+        "availableLanguage": ["Spanish", "English"]
+      }
+    }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <Navbar />
+    <Hero />
+    <Services />
+    <About />
+    <Contact />
+    <Footer />
+    <!--<WhatsappButton /> para despues-->
+</body>
+</html>
+
+<script>
+    import '../scripts/swiper-init.js';
+</script>

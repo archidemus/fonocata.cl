@@ -1,0 +1,88 @@
+---
+import { t } from '../utils/i18n';
+import { getPreferredLocale } from '../utils/i18n';
+
+const locale = getPreferredLocale(Astro.url);
+
+---
+<section id="servicios" class="py-24 bg-white relative overflow-hidden">
+    <!-- Subtle background pattern -->
+    <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 tracking-tight">
+                {t('services_title', locale)}
+            </h2>
+            <div class="w-24 h-1.5 bg-red-600 mx-auto rounded-full mb-6"></div>
+            <p class="text-lg text-gray-600">
+                {t('services_description', locale)}
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="group bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-6 text-red-600 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-900">{t('electrical_systems', locale)}</h3>
+                <ul class="space-y-3 text-gray-600">
+                    {['mill_control', 'axial_fans', 'ventilation_systems', 'furnace_control'].map(item => (
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-red-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>{t(item, locale)}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="group bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-6 text-red-600 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-900">{t('engineering', locale)}</h3>
+                <ul class="space-y-3 text-gray-600">
+                    {['electrical_substations', 'industrial_lighting', 'industrial_plants', 'capacitor_banks'].map(item => (
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-red-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>{t(item, locale)}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="group bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-6 text-red-600 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-900">{t('components', locale)}</h3>
+                <ul class="space-y-3 text-gray-600">
+                    {['protection_relays', 'electrical_monitoring', 'frequency_drives', 'soft_starters'].map(item => (
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-red-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>{t(item, locale)}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

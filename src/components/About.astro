@@ -1,0 +1,40 @@
+---
+import { t } from '../utils/i18n';
+import { getPreferredLocale } from '../utils/i18n';
+
+const locale = getPreferredLocale(Astro.url);
+---
+<section id="nosotros" class="py-24 bg-white border-t border-gray-100 relative overflow-hidden">
+    <!-- Subtle background pattern -->
+    <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+        
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="relative inline-block">
+                <div class="absolute -left-6 -top-6 w-24 h-24 bg-red-50 rounded-full mix-blend-multiply opacity-50 z-0"></div>
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 tracking-tight relative z-10">
+                    {t('about_heading_1', locale)} <span class="text-red-700">{t('about_heading_2', locale)}</span>
+                </h2>
+            </div>
+            
+            <div class="w-24 h-1.5 bg-red-600 rounded-full mx-auto mb-10"></div>
+            
+            <p class="text-lg md:text-xl leading-relaxed text-gray-600 mb-12">
+                {t('about_us', locale)}
+            </p>
+            
+            <div class="flex justify-center">
+                <div class="bg-gray-50 border border-gray-100 rounded-3xl px-12 py-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <p class="text-5xl md:text-6xl font-extrabold text-red-700 mb-2">25+</p>
+                    <p class="text-sm text-gray-500 font-bold tracking-widest uppercase">{t('years_of_experience', locale)}</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<style>
+/* Any scoped styles if needed */
+</style>
