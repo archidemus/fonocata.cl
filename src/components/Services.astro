@@ -1,75 +1,133 @@
 ---
-const services = [
+
+const benefits = [
   {
-    title: 'Voz y Vocología',
+    title: 'Identidad y Confianza',
     description:
-      'Evaluación y rehabilitación de alteraciones vocales y síndrome de laringe irritable.',
+      'Desarrolla una voz que no solo sea saludable, sino que te represente con total seguridad en cada conversación, desde el trabajo hasta tu hogar.',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-400"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>`,
     bgColor: 'bg-purple-50',
     iconBg: 'bg-purple-100',
   },
   {
-    title: 'Deglución y Disfagia',
+    title: 'Reencuentro Social',
     description:
-      'Rehabilitación y adaptaciones en la alimentación, incluyendo manejo de vía aérea artificial.',
+      'Recupera el placer de compartir una mesa. Mi objetivo es que vuelvas a disfrutar de comidas familiares y eventos sociales con una deglución segura y eficiente.',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><path d="M4 11V9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/><path d="M4 15v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/><path d="M4 11h16"/><path d="M4 15h16"/><path d="M5 5h14"/><path d="M5 19h14"/></svg>`,
-    // using a generic health icon for swallowing/airway as it's hard to find an exact open source one, maybe a plus/heart or similar
     bgColor: 'bg-blue-50',
     iconBg: 'bg-blue-100',
   },
   {
-    title: 'Cognición y Comunicación',
+    title: 'Autonomía en la Alimentación',
     description:
-      'Estimulación de lenguaje y cognición en adultos, promoviendo autonomía y neuroplasticidad.',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-400"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>`,
+      'Trabajamos para que recuperes la capacidad de alimentarte de forma digna y autónoma, priorizando siempre tu bienestar y tus decisiones.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-400"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/><path d="M12 5.5v5"/><path d="M14.5 8H9.5"/></svg>`,
     bgColor: 'bg-pink-50',
     iconBg: 'bg-pink-100',
   },
   {
-    title: 'Cuidados Paliativos y Fin de Vida',
+    title: 'Sanación Vocal',
     description:
-      'Acompañamiento, evaluación de comunicación y estrategias de confort en el fin de la vida.',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/><path d="M12 5.5v5"/><path d="M14.5 8H9.5"/></svg>`,
-    bgColor: 'bg-slate-100',
-    iconBg: 'bg-white',
+      'Te acompaño en el proceso de rehabilitación tras una lesión en las cuerdas vocales, devolviéndote la herramienta más importante de tu comunicación.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>`,
+    bgColor: 'bg-emerald-50',
+    iconBg: 'bg-emerald-100',
   },
+];
+
+const therapies = [
+  'Terapia de Voz',
+  'Terapia de deglución',
+  'Terapia cognitivo-comunicativa',
+  'Acompañamiento y asesoría en Cuidados Paliativos',
+  'Rehabilitación personalizada basada en evidencia científica',
 ];
 ---
 
 <section id="servicios" class="relative bg-white py-24">
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <!-- Beneficios -->
     <div class="mb-16 text-center md:mx-auto md:max-w-2xl">
       <h2
         class="font-heading mb-4 text-3xl font-extrabold text-slate-800 md:text-4xl"
       >
-        Tratamientos Fonoaudiológicos
+        Beneficios
       </h2>
       <p class="text-lg text-slate-600">
-        Si estás buscando un <strong>tratamiento fonoaudiológico</strong> personalizado,
-        ofrezco soluciones basadas en evidencia clínica y un trato humano excepcional.
+        Cada terapia está diseñada para mejorar tu calidad de vida de forma
+        real y tangible.
       </p>
     </div>
 
-    <!-- Grid de 4 columnas en lg, 2 en md, 1 en sm -->
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
       {
-        services.map((service) => (
+        benefits.map((benefit) => (
           <div
-            class={`rounded-2xl p-8 transition-all hover:-translate-y-1 hover:shadow-md ${service.bgColor} flex h-full flex-col border border-slate-50`}
+            class={`rounded-2xl p-8 transition-all hover:-translate-y-1 hover:shadow-md ${benefit.bgColor} flex h-full flex-col border border-slate-50`}
           >
             <div
-              class={`mb-6 flex h-14 w-14 items-center justify-center rounded-full shadow-sm ${service.iconBg}`}
-              set:html={service.icon}
+              class={`mb-6 flex h-14 w-14 items-center justify-center rounded-full shadow-sm ${benefit.iconBg}`}
+              set:html={benefit.icon}
             />
             <h3 class="font-heading mb-3 text-xl leading-tight font-bold text-slate-800">
-              {service.title}
+              {benefit.title}
             </h3>
             <p class="flex-grow text-sm leading-relaxed text-slate-600">
-              {service.description}
+              {benefit.description}
             </p>
           </div>
         ))
       }
+    </div>
+
+    <!-- Modalidades de atención -->
+    <div class="mt-20">
+      <h3
+        class="font-heading mb-8 text-center text-2xl font-bold text-slate-800 md:text-3xl"
+      >
+        Modalidades de Atención
+      </h3>
+      <div class="mx-auto grid max-w-3xl grid-cols-1 gap-6 md:grid-cols-2">
+        <div class="flex items-start gap-4 rounded-2xl border border-slate-100 bg-slate-50 p-6 shadow-sm">
+          <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-purple-100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-500"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <h4 class="font-heading text-lg font-bold text-slate-800">A domicilio</h4>
+            <p class="mt-1 text-sm text-slate-600">Sector Oriente de Santiago</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 rounded-2xl border border-slate-100 bg-slate-50 p-6 shadow-sm">
+          <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <h4 class="font-heading text-lg font-bold text-slate-800">Remota (Online)</h4>
+            <p class="mt-1 text-sm text-slate-600">Mediante link de conexión</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ¿A qué puedes acceder? -->
+    <div class="mt-20">
+      <h3
+        class="font-heading mb-8 text-center text-2xl font-bold text-slate-800 md:text-3xl"
+      >
+        ¿A qué puedes acceder?
+      </h3>
+      <div class="mx-auto max-w-2xl space-y-4">
+        {
+          therapies.map((therapy) => (
+            <div class="flex items-center gap-4 rounded-xl border border-slate-100 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md">
+              <div class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-purple-100">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" class="text-purple-500"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+              </div>
+              <span class="text-base font-medium text-slate-700">{therapy}</span>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>

@@ -1,23 +1,5 @@
 ---
-// src/components/InstagramFeed.astro
-
-// Actualizado con la URL real de fonocata.cl
 const BEHOLD_API_URL = 'https://feeds.behold.so/y8ZzL88DSZ0CiTE3F0K3';
-
-let posts = [];
-let error = false;
-
-try {
-  const response = await fetch(BEHOLD_API_URL);
-  if (response.ok) {
-    const data = await response.json();
-    // Behold entrega un objeto. Los posts están en data.posts
-    posts = data.posts ? data.posts.slice(0, 8) : [];
-  }
-} catch (e) {
-  console.error('Error cargando Instagram:', e);
-  error = true;
-}
 ---
 
 <section id="instagram-feed" class="relative bg-white py-24">
@@ -62,93 +44,24 @@ try {
       en fonoaudiología y recursos de acompañamiento.
     </p>
 
-    <!-- Grid Dinámico de Instagram -->
     <div
       class="grid grid-cols-2 gap-6 md:grid-cols-4"
       id="instagram-feed-container"
     >
-      {
-        posts.length > 0 ? (
-          posts.map((post: any) => (
-            <a
-              href={post.permalink}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group relative aspect-square overflow-hidden rounded-2xl bg-slate-100 shadow-sm transition-all hover:-translate-y-2 hover:shadow-xl"
-            >
-              <img
-                src={
-                  post.mediaType === 'VIDEO' ? post.thumbnailUrl : post.mediaUrl
-                }
-                alt={post.caption || 'Post de Instagram de Catalina'}
-                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                loading="lazy"
-              />
-              {post.mediaType === 'VIDEO' && (
-                <div class="absolute top-2 right-2 rounded-lg bg-black/30 p-1.5 text-white backdrop-blur-md transition-colors group-hover:bg-purple-500/50">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="m7 4 12 8-12 8V4z" />
-                  </svg>
-                </div>
-              )}
-              <div class="absolute inset-0 flex items-end bg-gradient-to-t from-purple-900/40 to-transparent p-4 opacity-0 transition-opacity group-hover:opacity-100">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <>
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                  </>
-                </svg>
-              </div>
-            </a>
-          ))
-        ) : (
-          /* Estado mientras no hay API Key o hay error */
-          <div class="col-span-full flex flex-col items-center rounded-3xl border-2 border-dashed border-slate-200 bg-slate-50 py-20">
-            <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-purple-100 text-purple-400">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <>
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                </>
-              </svg>
-            </div>
-            <h3 class="font-heading mb-2 text-xl font-bold text-slate-700">
-              Feed de Instagram
-            </h3>
-            <p class="mx-auto max-w-sm text-sm text-slate-500">
-              Conectando con Instagram...
-            </p>
-          </div>
-        )
-      }
+      <div
+        id="ig-placeholder"
+        class="col-span-full flex flex-col items-center rounded-3xl border-2 border-dashed border-slate-200 bg-slate-50 py-20"
+      >
+        <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-purple-100 text-purple-400">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+          </svg>
+        </div>
+        <h3 class="font-heading mb-2 text-xl font-bold text-slate-700">Feed de Instagram</h3>
+        <p class="mx-auto max-w-sm text-sm text-slate-500">Cargando publicaciones...</p>
+      </div>
     </div>
 
     <div class="mt-16">
@@ -179,3 +92,52 @@ try {
     </div>
   </div>
 </section>
+
+<script define:vars={{ beholdUrl: BEHOLD_API_URL }}>
+  async function loadInstagramFeed() {
+    const container = document.getElementById('instagram-feed-container');
+    if (!container) return;
+
+    try {
+      const response = await fetch(beholdUrl);
+      if (!response.ok) throw new Error('API error');
+      const data = await response.json();
+      const posts = data.posts ? data.posts.slice(0, 8) : [];
+
+      if (posts.length === 0) {
+        container.querySelector('#ig-placeholder').querySelector('p').textContent = 'Conectando con Instagram...';
+        return;
+      }
+
+      const playIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m7 4 12 8-12 8V4z" /></svg>';
+      const igIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>';
+
+      container.innerHTML = posts
+        .map((post) => {
+          const imgSrc = post.sizes?.medium?.mediaUrl || post.mediaUrl;
+          const videoBadge =
+            post.mediaType === 'VIDEO'
+              ? '<div class="absolute top-2 right-2 rounded-lg bg-black/30 p-1.5 text-white backdrop-blur-md transition-colors group-hover:bg-purple-500/50">' + playIcon + '</div>'
+              : '';
+          const caption = post.caption
+            ? post.caption.replace(/"/g, '&quot;')
+            : 'Post de Instagram de Catalina';
+
+          return (
+            '<a href="' + post.permalink + '" target="_blank" rel="noopener noreferrer" class="group relative aspect-square overflow-hidden rounded-2xl bg-slate-100 shadow-sm transition-all hover:-translate-y-2 hover:shadow-xl">' +
+              '<img src="' + imgSrc + '" alt="' + caption + '" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />' +
+              videoBadge +
+              '<div class="absolute inset-0 flex items-end bg-gradient-to-t from-purple-900/40 to-transparent p-4 opacity-0 transition-opacity group-hover:opacity-100">' +
+                igIcon +
+              '</div>' +
+            '</a>'
+          );
+        })
+        .join('');
+    } catch (e) {
+      console.error('Error cargando Instagram:', e);
+    }
+  }
+
+  loadInstagramFeed();
+</script>
