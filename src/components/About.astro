@@ -3,12 +3,12 @@ import { Image } from 'astro:assets';
 import myPhoto from '../assets/my_photo.webp';
 ---
 
-<section id="sobre-mi" class="relative overflow-hidden bg-slate-50 py-24">
+<section id="sobre-mi" class="relative overflow-hidden bg-slate-50 py-16">
   <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col items-center gap-16 lg:flex-row">
+    <div class="flex flex-col items-center gap-10 lg:flex-row">
       <!-- Imagen real de Catalina -->
-      <div class="flex w-full justify-center lg:w-1/2 lg:justify-end">
-        <div class="relative h-72 w-72 sm:h-96 sm:w-96">
+      <div class="flex w-full justify-center lg:w-2/5 lg:justify-end">
+        <div class="relative h-60 w-60 sm:h-72 sm:w-72">
           <div
             class="absolute inset-0 rotate-6 transform-gpu rounded-[2rem] bg-gradient-to-tr from-purple-200 to-pink-200 opacity-50 blur-sm"
           >
@@ -30,9 +30,9 @@ import myPhoto from '../assets/my_photo.webp';
       </div>
 
       <!-- Texto y CV -->
-      <div class="w-full lg:w-1/2">
+      <div class="w-full lg:w-3/5">
         <h2
-          class="font-heading relative mb-6 inline-block text-3xl font-extrabold text-slate-800 md:text-4xl"
+          class="font-heading relative mb-4 inline-block text-3xl font-extrabold text-slate-800 md:text-4xl"
         >
           Sobre Mí
           <span
@@ -40,30 +40,58 @@ import myPhoto from '../assets/my_photo.webp';
           ></span>
         </h2>
 
-        <p class="mb-6 text-lg leading-relaxed text-slate-600">
+        <p class="mb-4 text-base leading-relaxed text-slate-600">
           Soy <strong class="font-semibold text-purple-700"
             >Catalina Orellana Molnar</strong
-          >, Fonoaudióloga titulada de la Universidad Mayor. Cuento con más de
+          >, Fonoaudióloga titulada de la Universidad Mayor con más de
           <strong class="font-semibold text-purple-700">4 años de experiencia</strong>
-          clínica abordando disfonías, disfagia, trastornos de habla y comunicación
-          en adultos, y <strong class="font-semibold text-purple-700">2 años y medio</strong>
-          acompañando a personas en cuidados paliativos.
+          clínica en disfonías, disfagia, trastornos de habla y comunicación en adultos,
+          y <strong class="font-semibold text-purple-700">2 años y medio</strong>
+          en cuidados paliativos. Mi enfoque es un <strong>tratamiento humano</strong>
+          que preserva la autonomía del paciente, educando a las familias y adaptando
+          cada terapia a sus necesidades.
         </p>
 
-        <p class="mb-8 text-lg leading-relaxed text-slate-600">
-          Mi enfoque principal es la entrega de un <strong>tratamiento humano</strong>,
-          preservando la autonomía y la toma de decisiones. Educando a las familias
-          y adaptando cada terapia a las necesidades específicas del paciente y su entorno.
-        </p>
+        <!-- Co-autora protocolo SSMO -->
+        <div
+          class="mb-5 flex gap-3 rounded-xl border border-purple-100 bg-purple-50/60 p-4 shadow-sm"
+        >
+          <div class="mt-0.5 flex-shrink-0">
+            <svg
+              class="h-5 w-5 text-purple-500"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-heading text-sm font-bold text-purple-800">
+              Co-autora del Protocolo de Disfagia SSMO
+            </h4>
+            <p class="text-xs text-purple-700">
+              <a href="/protocolo.pdf" target="_blank" class="underline hover:text-purple-900">Protocolo oficial del SSMO</a> para abordaje inicial de disfagia.
+            </p>
+          </div>
+        </div>
 
         <!-- Formación Grid -->
         <h3
-          class="font-heading mb-4 flex items-center gap-2 text-xl font-bold text-slate-800"
+          class="font-heading mb-3 flex items-center gap-2 text-lg font-bold text-slate-800"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
+            width="18"
+            height="18"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -77,13 +105,13 @@ import myPhoto from '../assets/my_photo.webp';
           Formación
         </h3>
 
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <div
-            class="flex gap-3 rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition-transform hover:-translate-y-1"
+            class="flex gap-3 rounded-xl border border-slate-100 bg-white p-4 shadow-sm transition-transform hover:-translate-y-1"
           >
-            <div class="mt-1 flex-shrink-0">
+            <div class="mt-0.5 flex-shrink-0">
               <svg
-                class="h-5 w-5 text-purple-400"
+                class="h-4 w-4 text-purple-400"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
@@ -95,19 +123,19 @@ import myPhoto from '../assets/my_photo.webp';
               >
             </div>
             <div>
-              <h4 class="font-heading font-bold text-slate-700">
+              <h4 class="font-heading text-sm font-bold text-slate-700">
                 Diplomado en Vocología
               </h4>
-              <p class="text-sm text-slate-500">Universidad de Los Andes</p>
+              <p class="text-xs text-slate-500">Universidad de Los Andes</p>
             </div>
           </div>
 
           <div
-            class="flex gap-3 rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition-transform hover:-translate-y-1"
+            class="flex gap-3 rounded-xl border border-slate-100 bg-white p-4 shadow-sm transition-transform hover:-translate-y-1"
           >
-            <div class="mt-1 flex-shrink-0">
+            <div class="mt-0.5 flex-shrink-0">
               <svg
-                class="h-5 w-5 text-purple-400"
+                class="h-4 w-4 text-purple-400"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
@@ -119,10 +147,10 @@ import myPhoto from '../assets/my_photo.webp';
               >
             </div>
             <div>
-              <h4 class="font-heading font-bold text-slate-700">
+              <h4 class="font-heading text-sm font-bold text-slate-700">
                 Diplomado en Manejo de Vía Aérea Artificial
               </h4>
-              <p class="text-sm text-slate-500">Universidad San Sebastián</p>
+              <p class="text-xs text-slate-500">Universidad San Sebastián</p>
             </div>
           </div>
         </div>
