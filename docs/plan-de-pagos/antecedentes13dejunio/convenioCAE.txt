@@ -1,0 +1,14 @@
+
+Convenio CAE 2026
+Deuda al Día de Hoy	$ 15.038.642
+Monto del Convenio	$ 4.991.052  	help
+Ingreso anual año anterior	$ 20.822.862
+Saldo Deudor	$ 10.047.590
+check_circle
+  Incluye 1 deudas CAE
+check_circle   23 Cuotas Mensuales help
+check_circle   Valor Cuota $ 173.524 (*)
+Activa tu convenio pagando   $ 1.000.000   Cuota Pie (**)
+(*) El valor cuota propuesto se determina según un porcentaje de sus ingresos y por tanto, este convenio de pago no está saldando toda la deuda que posee con concepto CAE
+(**) El valor cuota no puede ser menor a 1 UTM , por tanto el convenio de pago puede calcularse en menos cuotas.
+(**) Su valor de cuota de pie no puede ser menor a una UTM
