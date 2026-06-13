@@ -1,0 +1,20 @@
+Solicitud de convenio CAE, sin registros de renta
+Para evitar el rechazo de su solicitud, este trámite aplica únicamente a quienes no registren declaración de renta. En ese caso, las y los contribuyentes deben presentar un certificado de cotizaciones previsionales del año inmediatamente anterior (enero-diciembre).
+
+Nota:
+
+Las deudas morosas de créditos de educación superior con aval del Estado que se acojan a este convenio, serán las informadas por la Comisión Administradora del Sistema de Créditos para Estudios Superiores (Comisión Ingresa).
+El pie mínimo será el mayor valor resultante entre 1 UTM y 10, 15 o 20% de la deuda neta total del CAE según comportamiento de pago previo. El monto del pie podrá ser editado para aumentarlo excediendo del máximo y en cuyo caso, se aumentará el monto total del convenio suscrito no alterando el monto de cuotas en la propuesta.
+El valor final de la cuota pie corresponderá al monto menor entre el porcentaje de la deuda neta, según el comportamiento de pago, y el tope de ingresos, detallados en la siguiente tabla.
+Tabla con el tope de ingresos para generar la cuota pie
+
+Tramo de renta	Tope comportamiento bueno (10%)	Tope comportamiento regular (15%)	Tope comportamiento malo (20%)
+$ 0 – $ 1.000.000
+pesos	1 UTM	1 UTM	1 UTM
+$ 1.000.001 – $ 2.000.000
+pesos	$ 1.000.000pesos	$ 1.500.000pesos	$ 2.000.000pesos
+$ 2.000.001 – $ 5.000.000
+pesos	$ 1.500.000pesos	$ 2.250.000pesos	$ 3.000.000pesos
+El convenio se suscribirá en hasta 24, 18 ó 12 cuotas de igual valor, dependiendo del comportamiento de pago anterior y su caducidad se efectuará con dos cuotas impagas o no pago de la cuota de ajuste.
+
+Para aquellos casos en que el tramo de renta esté entre $ 0 y $ 1.000.000, la cuota será de 1 UTM.
