@@ -23,7 +23,7 @@
 
 | Deuda | Plan Original | Real | Cambio |
 |-------|---------------|------|--------|
-| **CAE (TGR)** | $136.069/mes, "en pausa" | **$14.152.803 total. ORDEN DE EMBARGO activa.** Exp. 19359-2026. | 🔴 **Mucho peor** |
+| **CAE (TGR)** | $136.069/mes, "en pausa" | **$15.038.642 total (con intereses). Convenio ofrecido: pie $1M + 23 cuotas de $173.524. ORDEN DE EMBARGO activa.** Exp. 19359-2026. | 🔴 **Mucho peor** |
 | **TC Arrastre** | ~$450.000 (Factura 20/05) | $502.688 facturado. ✅ **Pagado completo el 09/06.** | ✅ Hecho |
 | **Avance TC** | $235.042/mes, 6 cuotas desde marzo | $235.042. Cuota 1/6 (marzo). Termina ~**agosto**, no noviembre. | 🟡 Termina antes |
 | **Crédito Consumo** | $136.549/mes | $136.549/mes. 13 cuotas restantes. Al día. | ✅ Igual |
